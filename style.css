@@ -1,0 +1,276 @@
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Main Container & Background --- */
+.main-container {
+    background-image: url(back-img.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 10px;
+}
+
+/* --- Card Styling --- */
+.card {
+    width: 100%;
+    max-width: 400px; /* Card size remains contained for focus */
+    margin: 20px auto;
+    border-radius: 20px;
+    background-color: rgb(228, 218, 218);
+    padding: 30px;
+    text-align: center;
+    opacity: 0.9;
+    border-top: 5px solid saddlebrown;
+    border-bottom: 5px solid saddlebrown;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Profile Image and Text --- */
+.profile-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image img {
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid saddlebrown;
+}
+
+.profile-image .text {
+    margin-top: 20px;
+}
+
+/* --- NAME (H2) WITH LINEAR GRADIENT --- */
+.profile-image .text .name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 700; 
+
+    /* Linear Gradient Effect */
+    background-image: linear-gradient(to right, #FF0080, #7928CA);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+    -webkit-text-fill-color: transparent;
+}
+
+.profile-image .text .prediction {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+/* --- Stats Section (Default: Horizontal) --- */
+.section {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    text-align: center;
+    align-items: center;
+    border-top: 3px solid wheat;
+    border-bottom: 3px solid wheat;
+}
+
+.section .item {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.section .item .label {
+    margin-top: 5px;
+    font-size: 15px;
+    color: gray;
+    font-weight: normal;
+}
+
+/* --- Join Button (CTA) --- */
+.join-button {
+    margin-top: 25px;
+    background-color: #007bff;
+    border-radius: 15px;
+    padding: 15px 0;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    animation-name: buttonPulse;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.join-button a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+}
+
+/* --- Features Box --- */
+.features-box {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: brown;
+    border-radius: 15px;
+    color: white; 
+}
+
+.features-box h3 {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.features-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.features-box li {
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.features-box li::before {
+    content: '🎯';
+    position: absolute;
+    left: 0;
+}
+
+/* --- Footer Spans --- */
+.footer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; 
+}
+
+.footer .s1,
+.footer .s2 {
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 18px; 
+    font-weight: bold;
+    color: white; 
+    white-space: nowrap;
+}
+
+.footer .s1 {
+    background-color: cornflowerblue;
+}
+
+.footer .s2 {
+    background-color: darkcyan;
+}
+
+/* --- Final Paragraph --- */
+.last-para {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #444; 
+}
+
+/* --- MEDIA QUERIES FOR LARGE PHONES (e.g., S23 Ultra, iPhone Pro Max) --- */
+/* This ensures slightly better spacing on wider mobile screens (up to 768px wide) */
+@media screen and (min-width: 401px) and (max-width: 768px) {
+    .card {
+        padding: 40px; /* More padding for a premium feel on larger displays */
+    }
+    .section {
+        justify-content: space-evenly; /* Evenly distribute space */
+    }
+    .section .item {
+        font-size: 22px; /* Slightly larger numbers */
+    }
+    .footer {
+        gap: 30px; /* More space between the two footer tags */
+    }
+}
+
+
+/* * --- MEDIA QUERIES FOR SMALL SCREENS (500px and below) --- */
+@media screen and (max-width: 500px) {
+    .card {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    /* Make the Stats section stack vertically on small phones */
+    .section {
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    
+    .section .item {
+        width: 100%; 
+        border-bottom: 1px dashed #ccc; 
+        padding-bottom: 10px;
+    }
+    .section .item:last-child {
+        border-bottom: none; 
+        padding-bottom: 0;
+    }
+
+    .profile-image .text .name {
+        font-size: 22px;
+    }
+    .profile-image .text .prediction {
+        font-size: 15px;
+    }
+    .features-box h3 {
+        font-size: 20px;
+    }
+    .features-box ul li {
+        font-size: 16px;
+    }
+    .join-button a {
+        font-size: 18px;
+        padding: 12px 0;
+    }
+    
+    /* Footer elements stack vertically on smallest screens */
+    .footer {
+        gap: 10px;
+        flex-direction: column; 
+    }
+    .footer .s1,
+    .footer .s2 {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+    }
+}
+
+/* --- Animation Keyframes --- */
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
