@@ -18,10 +18,10 @@
     padding: 10px;
 }
 
-/* --- Card Styling --- */
+/* --- Card Styling (Base Size) --- */
 .card {
     width: 100%;
-    max-width: 400px; /* Card size remains contained for focus */
+    max-width: 450px; /* Base max-width increased to 450px */
     margin: 20px auto;
     border-radius: 20px;
     background-color: rgb(228, 218, 218);
@@ -191,25 +191,25 @@
 }
 
 /* --- MEDIA QUERIES FOR LARGE PHONES (e.g., S23 Ultra, iPhone Pro Max) --- */
-/* This ensures slightly better spacing on wider mobile screens (up to 768px wide) */
-@media screen and (min-width: 401px) and (max-width: 768px) {
+@media screen and (min-width: 451px) and (max-width: 768px) {
     .card {
-        padding: 40px; /* More padding for a premium feel on larger displays */
+        max-width: 550px; /* S23 Ultra के लिए चौड़ाई बढ़ाई गई */
+        padding: 45px; 
     }
     .section {
-        justify-content: space-evenly; /* Evenly distribute space */
+        justify-content: space-evenly;
     }
     .section .item {
-        font-size: 22px; /* Slightly larger numbers */
+        font-size: 22px; 
     }
     .footer {
-        gap: 30px; /* More space between the two footer tags */
+        gap: 30px; 
     }
 }
 
 
-/* * --- MEDIA QUERIES FOR SMALL SCREENS (500px and below) --- */
-@media screen and (max-width: 500px) {
+/* * --- MEDIA QUERIES FOR SMALL SCREENS (450px and below) --- */
+@media screen and (max-width: 450px) {
     .card {
         padding: 20px;
         margin: 10px;
